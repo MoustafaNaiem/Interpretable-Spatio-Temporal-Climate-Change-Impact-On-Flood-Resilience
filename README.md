@@ -11,12 +11,16 @@ Datasets:
 The datasets used in this article are publicly available. The meteorological disaster database used in the generation of the resilience categories is provided by the NWS, a sub-agency under the National Oceanic and Atmospheric Administration (NOAA), available at  (https://www.ncei.noaa.gov/pub/data/swdi/stormevents/csvfiles/). The historical climate data used is provided by Global Historical Climatology Network, a sub-agency under NOAA, and is available at (https://www.ncdc.noaa.gov/cdo-web/search?datasetid=GHCND), and the BCSD CMIP5 projections and simulations can be conducted and accessed through (https://gdo-dcp.ucllnl.org/downscaled_cmip_projections/). 
 
 Data gathering:
-The datasets included in this study are all publicly available, and unique to each specific location, study duration, resolution, and objective, and thus will not be provided through this repository (Links provided above)
+The datasets included in this study are all publicly available, and unique to each specific location, study duration, resolution, and objective. One file is included in this repository, the RCP 8.5 raw dataset, named: Merged_Texascounties_RCP8_3Cats
 
 Date Cleaning and preprocessing:
 The flood disaster records for each of the 45 counties in the state of texas were gathered and assigned a resilience category for each data record. These categories were coupled with climate information at the location and exact time of the recorded disaster. for each month, the disaster categories were aggregated, and an average index was assigned for each month from the year 1996 up to the year 2020, and coupled with the average climate information for said month. Monthly Climate projections were gathered from the collection stations at each of those locations, and added as variables. The projections employed were the results of 16 GCMs, and thus, the variables were repeated 16 times (once for each model). Misclassification Error was used and employed through all possible combination from those models, and the best performing model (for both emission scenarios RCP 6.0 and 8.5) were employed for RandomForest, and Bagged Decision Trees. More details on these models  can be found in the main Manuscript.
-Code Contents:
 
+Data File:
+Merged_Texascounties_RCP8_3Cats
+This dataset contains 167 variable, and 4325 observations. The variables are the historic disaster records, and the corresponding climate information from the different GCMs. This dataset was used in the development of the ML model.
+
+Code Contents:
 The main Code files: 
 1- Bagged DT RCP8.R
 2- Bagged DT RCP6.R
